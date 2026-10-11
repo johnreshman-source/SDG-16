@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Submit a public issue report to the SDG 16 educational project." />
+    <title>Report an Issue | SDG 16</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="/" aria-label="SDG 16 home"><span class="brand-mark">SDG</span><span>16</span></a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">☰</button>
+        <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+          <a href="/awareness.html">Awareness</a>
+          <a href="/rights-awareness.html">Rights Awareness</a>
+          <a href="/report.html" aria-current="page">Public Issue Reporting</a>
+          <a href="/resources.html">Resources</a>
+          <a href="/user-login.html" class="account-link">User sign in</a>
+          <a href="/admin-login.html" class="nav-action">Administrator Login</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="page-hero">
+        <div class="container">
+          <p class="eyebrow">Public Issue Reporting</p>
+          <h1>Share a concern</h1>
+          <p class="lead">You can submit a report without creating an account or providing contact details.</p>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container report-grid">
+          <div>
+            <div class="report-summary card">
+              <h2>Before you submit</h2>
+              <p>Choose a category and provide a meaningful description between 20 and 5,000 characters. Anonymous reporting is enabled by default. This form does not request your name, email, telephone number, home address, or geolocation.</p>
+              <p class="disclaimer-line">If you are signed in and turn off anonymous reporting, this report is linked to your account so you can view its status in your account dashboard. Anonymous reports are not linked to your account and will not appear there.</p>
+              <p class="disclaimer-line">A short-lived first-party session cookie supports CSRF protection and admin login. The application does not use analytics or identity-tracking cookies.</p>
+              <p class="disclaimer-line">Technical anonymity cannot be absolutely guaranteed because hosting providers, network infrastructure, or server configuration may process connection metadata. Avoid including identifying details in the description if you do not want them stored.</p>
+              <p class="disclaimer-line"><strong>This is an independent educational project, not an official complaint portal.</strong> The service is not monitored for emergencies and submitted reports are not automatically sent to police, courts, or government authorities.</p>
+            </div>
+          </div>
+          <div class="card report-card">
+            <form id="report-form" novalidate>
+              <div class="field-group">
+                <label for="category">Category</label>
+                <select id="category" name="category" required>
+                  <option value="">Select a category</option>
+                  <option value="Public Safety">Public Safety</option>
+                  <option value="Corruption Concern">Corruption Concern</option>
+                  <option value="Discrimination">Discrimination</option>
+                  <option value="Access to Justice">Access to Justice</option>
+                  <option value="Human Rights Concern">Human Rights Concern</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div class="field-group">
+                <label for="description">Description</label>
+                <textarea id="description" name="description" rows="7" minlength="20" maxlength="5000" placeholder="Describe the issue clearly. Avoid adding identifying details unless you choose to." required></textarea>
+                <div class="counter-row"><span>Minimum 20 characters</span><span id="char-count">0 / 5000</span></div>
+              </div>
+              <label class="checkbox-row" for="anonymous">
+                <input id="anonymous" name="anonymous" type="checkbox" checked />
+                <span>Submit anonymously (recommended; will not be linked to your account)</span>
+              </label>
+              <button class="button primary full-width" type="submit" id="submit-report-btn">Submit report</button>
+              <div id="report-message" class="form-message" role="alert" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer"><div class="container footer-wrap"><p>© 2026 SDG 16 Awareness and Public Issue Reporting System</p><a href="/admin-login.html">Administrator access</a></div></footer>
+    <script src="/js/app.js"></script>
+  </body>
+</html>

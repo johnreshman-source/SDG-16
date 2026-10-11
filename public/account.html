@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="View reports linked to your SDG 16 account." />
+    <title>My Reports | SDG 16</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body class="admin-body">
+    <header class="admin-header">
+      <div class="container admin-topbar">
+        <div>
+          <p class="eyebrow">Optional user account</p>
+          <h1>My reports</h1>
+          <p id="account-welcome" class="auth-copy"></p>
+        </div>
+        <div class="account-actions">
+          <a href="/report.html" class="button secondary">Submit a report</a>
+          <button id="user-logout-button" class="button secondary" type="button">Sign out</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container dashboard-shell">
+      <div class="notice-box account-notice">
+        Only reports submitted while signed in with anonymous reporting turned off are linked to your account. Anonymous reports are not linked and cannot be listed here. Reports are stored in this application's database; this is not an official complaint portal.
+      </div>
+      <div id="account-message" class="form-message" role="alert" aria-live="polite"></div>
+      <section class="account-reports">
+        <div class="section-heading">
+          <p class="eyebrow">Your submissions</p>
+          <h2>Reports linked to this account</h2>
+        </div>
+        <div id="user-reports-list" class="user-reports-list" aria-live="polite"></div>
+      </section>
+    </main>
+    <script src="/js/user-account.js"></script>
+  </body>
+</html>

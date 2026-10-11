@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Administrator Login</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body class="auth-body">
+    <main class="auth-shell">
+      <section class="auth-card card">
+        <p class="eyebrow">Administrator access</p>
+        <h1>Secure login</h1>
+        <p class="auth-copy">
+          This area is restricted to authorised administrators only.
+        </p>
+
+        <form id="admin-login-form" novalidate>
+          <div class="field-group">
+            <label for="admin-username">Username</label>
+            <input id="admin-username" name="username" type="text" autocomplete="username" required />
+          </div>
+
+          <div class="field-group">
+            <label for="admin-password">Password</label>
+            <input id="admin-password" name="password" type="password" autocomplete="current-password" required />
+          </div>
+
+          <button type="submit" class="button primary full-width" id="admin-login-btn">Log in</button>
+          <p id="admin-login-status" class="loading-note" role="status" aria-live="polite"></p>
+          <div id="admin-login-message" class="form-message" role="alert" aria-live="polite"></div>
+        </form>
+      </section>
+    </main>
+
+    <script src="/js/admin.js"></script>
+  </body>
+</html>

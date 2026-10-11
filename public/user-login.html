@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Sign in to your optional SDG 16 reporting account." />
+    <title>User Sign In | SDG 16</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body class="auth-body">
+    <main class="auth-shell">
+      <section class="auth-card card">
+        <a class="brand auth-brand" href="/" aria-label="SDG 16 home"><span class="brand-mark">SDG</span><span>16</span></a>
+        <p class="eyebrow">Optional user account</p>
+        <h1>Sign in</h1>
+        <p class="auth-copy">Public pages and anonymous reporting remain available without an account. Sign in to view reports you submit with anonymous reporting turned off.</p>
+
+        <form id="user-login-form" novalidate>
+          <div class="field-group">
+            <label for="user-login-username">Username</label>
+            <input id="user-login-username" name="username" type="text" minlength="3" maxlength="32" autocomplete="username" required />
+          </div>
+          <div class="field-group">
+            <label for="user-login-password">Password</label>
+            <input id="user-login-password" name="password" type="password" maxlength="128" autocomplete="current-password" required />
+          </div>
+          <button type="submit" class="button primary full-width" id="user-login-button">Sign in</button>
+          <p id="user-login-status" class="loading-note" role="status" aria-live="polite"></p>
+          <div id="user-login-message" class="form-message" role="alert" aria-live="polite"></div>
+        </form>
+
+        <p class="auth-switch">New here? <a href="/user-register.html">Create an account</a></p>
+        <p class="auth-back"><a href="/">← Back to the public site</a></p>
+      </section>
+    </main>
+    <script src="/js/user-auth.js"></script>
+  </body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Administrator Dashboard</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body class="admin-body">
+    <header class="admin-header">
+      <div class="container admin-topbar">
+        <div>
+          <p class="eyebrow">Dashboard</p>
+          <h1>Administrator Panel</h1>
+        </div>
+        <div class="admin-header-actions">
+          <button id="refresh-dashboard" class="button secondary" type="button">Refresh</button>
+          <button id="logout-btn" class="button secondary" type="button">Log out</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container dashboard-shell">
+      <section class="stats-grid">
+        <article class="stat-card card">
+          <p>Total reports</p>
+          <h2 id="total-reports">0</h2>
+        </article>
+        <article class="stat-card card">
+          <p>New</p>
+          <h2 id="new-count">0</h2>
+        </article>
+        <article class="stat-card card">
+          <p>Under Review</p>
+          <h2 id="review-count">0</h2>
+        </article>
+        <article class="stat-card card">
+          <p>Resolved</p>
+          <h2 id="resolved-count">0</h2>
+        </article>
+      </section>
+
+      <section class="dashboard-detail-grid">
+        <article class="card dashboard-detail-card">
+          <h2>Reports by category</h2>
+          <div id="category-stats" class="category-stats"></div>
+        </article>
+        <article class="card dashboard-detail-card">
+          <h2>Recent reports</h2>
+          <ul id="recent-reports" class="recent-reports"></ul>
+        </article>
+      </section>
+      <div id="dashboard-message" class="form-message" role="alert" aria-live="polite"></div>
+
+      <section class="toolbar card">
+        <div class="filter-group">
+          <label for="status-filter">Status</label>
+          <select id="status-filter">
+            <option value="">All statuses</option>
+            <option value="New">New</option>
+            <option value="Under Review">Under Review</option>
+            <option value="Resolved">Resolved</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="category-filter">Category</label>
+          <select id="category-filter">
+            <option value="">All categories</option>
+            <option value="Public Safety">Public Safety</option>
+            <option value="Corruption Concern">Corruption Concern</option>
+            <option value="Discrimination">Discrimination</option>
+            <option value="Access to Justice">Access to Justice</option>
+            <option value="Human Rights Concern">Human Rights Concern</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="filter-group search-row">
+          <label for="search-input">Search</label>
+          <input id="search-input" type="search" placeholder="Reference ID or text" />
+        </div>
+
+        <div class="filter-group">
+          <label for="sort-filter">Submission date</label>
+          <select id="sort-filter">
+            <option value="newest">Newest first</option>
+            <option value="oldest">Oldest first</option>
+          </select>
+        </div>
+
+        <button id="apply-filters" class="button primary" type="button">Apply</button>
+      </section>
+
+      <section class="table-card card">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Reference</th>
+                <th>Category</th>
+                <th>Description</th>
+                <th>Anonymous</th>
+                <th>Status</th>
+                <th>Created</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="reports-table-body"></tbody>
+          </table>
+        </div>
+
+        <div class="pagination-row">
+          <button id="prev-page" type="button" class="button secondary">Previous</button>
+          <span id="page-indicator">Page 1</span>
+          <button id="next-page" type="button" class="button secondary">Next</button>
+        </div>
+      </section>
+    </main>
+
+    <dialog id="report-dialog" class="report-dialog" aria-labelledby="report-dialog-title">
+      <div class="dialog-header">
+        <div>
+          <p class="eyebrow">Report details</p>
+          <h2 id="report-dialog-title">Report</h2>
+        </div>
+        <button id="close-report-dialog" class="dialog-close" type="button" aria-label="Close report details">×</button>
+      </div>
+      <dl class="report-meta">
+        <div><dt>Reference</dt><dd id="detail-reference"></dd></div>
+        <div><dt>Category</dt><dd id="detail-category"></dd></div>
+        <div><dt>Status</dt><dd id="detail-status"></dd></div>
+        <div><dt>Submitted</dt><dd id="detail-created"></dd></div>
+        <div><dt>Last updated</dt><dd id="detail-updated"></dd></div>
+        <div><dt>Anonymous</dt><dd id="detail-anonymous"></dd></div>
+      </dl>
+      <section class="report-description">
+        <h3>Description</h3>
+        <p id="detail-description"></p>
+      </section>
+      <form method="dialog" class="dialog-actions"><button class="button secondary" type="submit">Close</button></form>
+    </dialog>
+
+    <script src="/js/admin.js"></script>
+  </body>
+</html>
